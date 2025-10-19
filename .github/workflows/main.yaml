@@ -42,6 +42,7 @@ jobs:
     - name: Build wheel
       if: matrix.python-version == 3.8
       run: |
+        cd docs && make html && cd ..
         python setup.py sdist bdist_wheel
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
